@@ -1,1 +1,22 @@
 
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Sex</th>
+      <th scope="col">Height</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Fat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of records; let myIndex = index;">
+      <th scope="row">{{myIndex+1}}</th>
+      <td>{{record.sex}}</td>
+      <td>{{record.height}}</td>
+      <td>{{record.weight}}</td>
+      <td>{{record.fat}}</td>
+    </tr>
+
+  </tbody>
+</table>
