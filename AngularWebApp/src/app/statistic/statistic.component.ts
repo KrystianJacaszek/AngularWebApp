@@ -14,12 +14,15 @@ export class StatisticComponent implements OnInit {
 
     records=[]
 
+    avgData;
 
   ngOnInit() {
 
     this.records=this.calcLogicService.getData();
 
     console.log(this.records);
+
+    this.avgData=this.calcLogicService.getAvgData();
 
   }
 

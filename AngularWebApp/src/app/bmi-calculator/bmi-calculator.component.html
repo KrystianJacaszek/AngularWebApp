@@ -1,7 +1,6 @@
 <div class="d-flex flex-md-column ">
 
   <h3 class="display-4">Calorie Calculator</h3>
-
   <div class="d-flex flex-row justify-content-between">
     <button type="button" (click)="chooseSex('male')" class="btn btn-primary btn-lg">Male</button>
     <h3 class="display-5">Choosed sex: {{calcSex}}</h3>
@@ -12,7 +11,7 @@
     <div class="input-group-prepend">
       <span class="input-group-text">Height</span>
     </div>
-    <input type="text" [(ngModel)] ="calcHeight" class="form-control" aria-label="Amount (to the nearest dollar)">
+    <input type="number" [(ngModel)] ="calcHeight" class="form-control" aria-label="Amount (to the nearest dollar)">
     <div class="input-group-append">
       <span class="input-group-text">cm</span>
     </div>
@@ -22,7 +21,7 @@
     <div class="input-group-prepend">
       <span class="input-group-text">Weight</span>
     </div>
-    <input type="text" [(ngModel)]="calcWeight" class="form-control" aria-label="Amount (to the nearest dollar)">
+    <input type="number" [(ngModel)]="calcWeight" class="form-control" aria-label="Amount (to the nearest dollar)">
     <div class="input-group-append">
       <span class="input-group-text">kg</span>
     </div>
@@ -32,14 +31,14 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-default">Age</span>
     </div>
-    <input type="text" [(ngModel)]="calcAge" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input type="number" min="15" max="101" [(ngModel)]="calcAge" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
   </div>
 
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text">Fat</span>
     </div>
-    <input type="text" [(ngModel)] ="calcFat" class="form-control" aria-label="Amount (to the nearest dollar)">
+    <input type="number" [(ngModel)] ="calcFat" class="form-control" aria-label="Amount (to the nearest dollar)">
     <div class="input-group-append">
       <span class="input-group-text">%</span>
     </div>
@@ -57,33 +56,6 @@
           <option value="1.8">Extremely Active(physical work, daily training)</option>
         </select>
       </div>
-
-<div class="d-flex flex-row justify-content-between" >
-
-
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text">Lose weight</span>
-    </div>
-    <input type="text" [(ngModel)] ="calcLose" class="form-control" aria-label="Amount (to the nearest dollar)">
-    <div class="input-group-append">
-      <span class="input-group-text">kg/week</span>
-    </div>
-  </div>
-
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text">Gain weight</span>
-    </div>
-    <input type="text" [(ngModel)] ="calcGain" class="form-control" aria-label="Amount (to the nearest dollar)">
-    <div class="input-group-append">
-      <span class="input-group-text">kg/week</span>
-    </div>
-  </div>
-</div>
-
-
-
   <button type="button" (click)="calcCalories()" class="btn btn-primary btn-lg">Calculate</button>
 
 </div>

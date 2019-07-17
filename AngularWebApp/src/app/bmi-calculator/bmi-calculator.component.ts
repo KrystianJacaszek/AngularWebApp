@@ -1,5 +1,7 @@
+import { from } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { CalculatorLogicService } from '../calculatorLogicservice';
+import { Validators, FormBuilder, FormGroup, FormControl, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-bmi-calculator',
@@ -10,6 +12,7 @@ export class BmiCalculatorComponent implements OnInit {
 
   constructor(private calcLogicService : CalculatorLogicService) { }
 
+  //form: FormGroup;
   showArray=[];
 
   selectedOption=0;
@@ -29,11 +32,16 @@ export class BmiCalculatorComponent implements OnInit {
 
     this.showArray=[];
 
-    this.showArray=this.calcLogicService.startLogic(this.calcSex,this.calcWeight,this.calcHeight,this.calcAge,this.calcFat,this.selectedOption);
+    this.showArray=this.calcLogicService.startLogic(+this.calcSex,+this.calcWeight,+this.calcHeight,+this.calcAge,+this.calcFat,+this.selectedOption);
 
   }
 
   ngOnInit() {
+    // this.form=new FormGroup({
+    //   calcHeight: new FormControl("",[Validators.required, Validators.min(100), Validators.max(250),Validators.required, Validators.maxLength(3)]),
+
+    // })
+
   }
 
 }

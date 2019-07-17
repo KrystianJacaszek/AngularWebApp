@@ -4,7 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +14,7 @@ import { BmiCalculatorComponent } from './bmi-calculator/bmi-calculator.componen
 import { from } from 'rxjs';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent},
+  { path: '', component: HomeComponent},
   { path: 'bmiCalculator', component: BmiCalculatorComponent},
   {path: 'statistic', component: StatisticComponent}
 ]
