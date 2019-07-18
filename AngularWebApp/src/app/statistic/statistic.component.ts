@@ -13,7 +13,6 @@ export class StatisticComponent implements OnInit {
     }
 
     records=[]
-
     avgData;
 
   ngOnInit() {
