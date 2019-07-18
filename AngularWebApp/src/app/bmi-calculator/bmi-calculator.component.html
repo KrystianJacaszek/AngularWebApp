@@ -1,0 +1,130 @@
+<div class="d-flex flex-md-column ">
+
+  <h3 class="display-4">Calorie Calculator</h3>
+  <div class="d-flex flex-row justify-content-between">
+    <button type="button" (click)="isMale($event)" value="male" class="btn btn-primary btn-lg mb-2">Male</button>
+    <h3 class="display-5">Choosed sex: {{calcSex}}</h3>
+    <button type="button" (click)="isMale($event)" value="female" class="btn btn-primary btn-lg mb-2">Female</button>
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Height</span>
+    </div>
+    <input type="number" [(ngModel)] ="calcHeight" min="{{rangeHeight.min}}" max="{{rangeHeight.max}}" class="form-control" aria-label="Amount (to the nearest dollar)">
+    <div class="input-group-append">
+      <span class="input-group-text">cm</span>
+    </div>
+  </div>
+
+  <div class="input-group mb-3 ">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Weight</span>
+    </div>
+    <input type="number" [(ngModel)]="calcWeight" min="{{rangeWeight.min}}" max="{{rangeWeight.max}}" class="form-control" aria-label="Amount (to the nearest dollar)">
+    <div class="input-group-append">
+      <span class="input-group-text">kg</span>
+    </div>
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Age</span>
+    </div>
+    <input type="number" min="{{rangeAge.min}}" max="{{rangeAge.max}}" [(ngModel)]="calcAge" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Fat</span>
+    </div>
+    <input type="number" [(ngModel)] ="calcFat" min="{{rangeFat.min}}" max="{{rangeFat.max}}" class="form-control" aria-label="Amount (to the nearest dollar)">
+    <div class="input-group-append">
+      <span class="input-group-text">%</span>
+    </div>
+  </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Activity level</label>
+        </div>
+        <select class="custom-select" [(ngModel)]="selectedOption"  id="inputGroupSelect01">
+          <option value="1">Lazy (Just lay on the bed)</option>
+          <option value="1.2">Inactive (Less than 30minutes a week)</option>
+          <option value="1.4">Moderately active (Between 30 and 60 minutes a week)</option>
+          <option value="1.6">Active (Between 60 and 150 minutes a week)</option>
+          <option value="1.8">Extremely Active(physical work, daily training)</option>
+        </select>
+      </div>
+  <button type="button" (click)="calcCalories()" class="btn btn-primary btn-lg mb-3">Calculate</button>
+
+
+
+<div class="alert alert-danger mb-3 " role="alert" *ngIf="isNotValid">
+    <h1 class="display-3">Input data is not Valid</h1>
+
+    <table class="table my-5">
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>Value</th>
+          <th>Min</th>
+          <th>Max</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let rec of [{name:'Heigt',value:calcHeight, range:rangeHeight},
+                              {name:'Weight',value:calcWeight, range:rangeWeight},
+                              {name:'Age',value:calcAge, range:rangeAge},
+                              {name:'Fat',value:calcFat, range:rangeFat}
+                              ]">
+        <th>{{rec.name}}</th>
+        <td>{{rec.value}}</td>
+        <td>{{rec.range.min}}</td>
+        <td>{{rec.range.max}}</td>
+      </tr>
+
+    </table>
+</div>
+
+</div>
+
+
+<div *ngFor="let record of showArray">
+
+<div class="d-flex flex-column">
+<div class="d-flex flex-row justify-content-center align-items-center ">
+  <h4 class="display-5">The basic rate of metabolism - BMR = {{record.bmrKcal}} kcal</h4>
+</div>
+<p>Calculate togheter with: {{record.title}} </p>
+<p>To keep your weight, you need every day <span class="font-weight-bold">{{record.suggestKcal}} kcal</span> parted in</p>
+<table class="table">
+    <tbody>
+
+      <tr>
+        <td></td>
+        <td>kcal</td>
+        <td>grams</td>
+      </tr>
+
+
+    <tr>
+      <td>Carbohydrates (55%)</td>
+      <td>{{record.caloriesArray.calorieKcal.carbohydrates}}</td>
+      <td>{{record.caloriesArray.calorieGrams.carbohydrates}}</td>
+    </tr>
+    <tr>
+      <td>Proteins (15%)</td>
+      <td>{{record.caloriesArray.calorieKcal.proteins}}</td>
+      <td>{{record.caloriesArray.calorieGrams.proteins}}</td>
+    </tr>
+    <tr>
+      <td>Fats (30%)</td>
+      <td>{{record.caloriesArray.calorieKcal.fats}}</td>
+      <td>{{record.caloriesArray.calorieGrams.fats}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+

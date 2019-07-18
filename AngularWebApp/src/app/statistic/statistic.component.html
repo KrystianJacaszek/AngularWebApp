@@ -1,0 +1,66 @@
+<div >
+  <h4 class="display-4">Statistic table - average values</h4>
+  <table class="table table-striped">
+    <caption>Statistics</caption>
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Average</th>
+          </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Age</td>
+        <td>{{avgData.age}}</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Height</td>
+        <td>{{avgData.height}} cm</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Weight</td>
+        <td>{{avgData.weight}} kg</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>BMI</td>
+        <td>{{avgData.bmi}}</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>BMR</td>
+        <td>{{avgData.bmr}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+
+<ng-template #elseBlock>
+    <h4 class="display-4">No statistic date</h4>
+  </ng-template>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Sex</th>
+      <th scope="col">Height</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Fat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of records; let myIndex = index;">
+      <th scope="row">{{myIndex+1}}</th>
+      <td>{{record.person.sex}}</td>
+      <td>{{record.person.height}}</td>
+      <td>{{record.person.weight}}</td>
+      <td>{{record.person.fat}}</td>
+    </tr>
+
+  </tbody>
+</table>
