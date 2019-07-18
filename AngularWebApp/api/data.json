@@ -1,7 +1,7 @@
 [
   {
     "person": {
-      "sex": "male",
+      "gender": "male",
       "weight": 74,
       "height": 167,
       "age": 23,
@@ -13,7 +13,7 @@
   },
   {
     "person": {
-      "sex": "male",
+      "gender": "female",
       "weight": 74,
       "height": 167,
       "age": 23,
@@ -25,7 +25,7 @@
   },
   {
     "person": {
-      "sex": "male",
+      "gender": "female",
       "weight": 74,
       "height": 190,
       "age": 23,
@@ -37,7 +37,7 @@
   },
   {
     "person": {
-      "sex": "male",
+      "gender": "female",
       "weight": 74,
       "height": 167,
       "age": 23,
@@ -49,7 +49,7 @@
   },
   {
     "person": {
-      "sex": "male",
+      "gender": "male",
       "weight": 55,
       "height": 160,
       "age": 18,
@@ -61,7 +61,7 @@
   },
   {
     "person": {
-      "sex": "male",
+      "gender": "male",
       "weight": 74,
       "height": 167,
       "age": 23,
@@ -73,7 +73,7 @@
   },
   {
     "person": {
-      "sex": "male",
+      "gender": "male",
       "weight": 82,
       "height": 190,
       "age": 24,
@@ -85,7 +85,7 @@
   },
   {
     "person": {
-      "sex": "male",
+      "gender": "male",
       "weight": 55,
       "height": 160,
       "age": 19,
@@ -97,7 +97,7 @@
   },
   {
     "person": {
-      "sex": "male",
+      "gender": "male",
       "weight": 63,
       "height": 177,
       "age": 20,
@@ -109,7 +109,7 @@
   },
   {
     "person": {
-      "sex": "male",
+      "gender": "female",
       "weight": 74,
       "height": 167,
       "age": 23,
@@ -118,257 +118,5 @@
     },
     "bmi": 26.533758829646096,
     "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 55,
-      "height": 160,
-      "age": 19,
-      "fat": 14,
-      "activityLevel": 1.4
-    },
-    "bmi": 21.484375,
-    "bmr": 1494.505
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 79,
-      "height": 168,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 27.990362811791385,
-    "bmr": 1837.4289999999999
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 167,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 26.533758829646096,
-    "bmr": 1763.676
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 74,
-      "height": 200,
-      "age": 23,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 18.5,
-    "bmr": 1928.7749999999999
-  },
-  {
-    "person": {
-      "sex": "male",
-      "weight": 66,
-      "height": 190,
-      "age": 17,
-      "fat": 8,
-      "activityLevel": 1
-    },
-    "bmi": 18.282548476454295,
-    "bmr": 1809.3950000000002
   }
 ]

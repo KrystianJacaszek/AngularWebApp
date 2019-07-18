@@ -1,5 +1,5 @@
 export class PersonData {
-    sex: string;
+    gender: string;
     weight: number;
     height: number;
     age: number;
