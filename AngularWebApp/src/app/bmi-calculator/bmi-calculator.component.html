@@ -2,9 +2,9 @@
 
   <h3 class="display-4">Calorie Calculator</h3>
   <div class="d-flex flex-row justify-content-between">
-    <button type="button" (click)="isMale(true)" class="btn btn-primary btn-lg mb-2">Male</button>
+    <button type="button" (click)="isMale($event)" value="male" class="btn btn-primary btn-lg mb-2">Male</button>
     <h3 class="display-5">Choosed sex: {{calcSex}}</h3>
-    <button type="button" (click)="isMale(false)" class="btn btn-primary btn-lg mb-2">Female</button>
+    <button type="button" (click)="isMale($event)" value="female" class="btn btn-primary btn-lg mb-2">Female</button>
   </div>
 
   <div class="input-group mb-3">

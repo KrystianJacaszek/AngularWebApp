@@ -1,6 +1,6 @@
+import { DataManagmentService } from './../data-managment.service';
 import { CalculatorLogicService } from './../calculatorLogicservice';
 import { Component, OnInit } from '@angular/core';
-
 
 @Component({
   selector: 'app-statistic',
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatisticComponent implements OnInit {
 
-  constructor(private calcLogicService : CalculatorLogicService) {
+  constructor(private calcLogicService : CalculatorLogicService, private dataService : DataManagmentService) {
     }
 
     records=[]
@@ -18,11 +18,13 @@ export class StatisticComponent implements OnInit {
 
   ngOnInit() {
 
+    this.calcLogicService.getDataFromServer();
+
     this.records=this.calcLogicService.getData();
 
-    console.log(this.records);
-
     this.avgData=this.calcLogicService.getAvgData();
+
+
 
   }
 

@@ -30,14 +30,20 @@ export class BmiCalculatorComponent implements OnInit {
   calcAge: number = 23;
   calcWeight: number = 74;
   calcHeight:number = 167
-  calcSex:string = "male";
+  calcSex:string = 'male';
   calcFat:number = 8;
 
-  isMale(statement:boolean) {
-    if(statement)
-      this.calcSex = "male";
-    else
-      this.calcSex="female"
+  // isMale(statement:boolean) {
+  //   if(statement)
+  //     this.calcSex = "male";
+  //   else
+  //     this.calcSex="female"
+  // }
+
+  isMale(e) {
+
+      this.calcSex =e.target.value;
+
   }
 
   calcCalories() {
@@ -50,11 +56,12 @@ export class BmiCalculatorComponent implements OnInit {
     console.log(this.calcSex);
 
     if (this.validateINputData()) {
-      this.showArray = this.calcLogicService.startLogic(+this.calcSex, +this.calcWeight, +this.calcHeight, +this.calcAge, +this.calcFat, +this.selectedOption);
+      this.isNotValid=false;
+      this.showArray = this.calcLogicService.startLogic(this.calcSex, +this.calcWeight, +this.calcHeight, +this.calcAge, +this.calcFat, +this.selectedOption);
     }
     else{
       this.isNotValid=true;
-      console.log("lipa");
+      console.log("Invalid");
     }
 
 

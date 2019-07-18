@@ -1,9 +1,10 @@
+import { DataManagmentService } from './data-managment.service';
 import { CaloriesModel } from './calories-model';
 import { PersonData } from './person-data';
 
 import { Injectable } from '@angular/core';
-import { ElementAst } from '@angular/compiler';
-import { emptyScheduled } from 'rxjs/internal/observable/empty';
+import { TemplateParseResult } from '@angular/compiler';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +17,16 @@ export class CalculatorLogicService {
 
   avarageData;
 
-  constructor() { }
+  constructor(private dataService: DataManagmentService) { }
 
    startLogic(sex, weight, height, age, fat, activityLevel){
 
     let personModel = new PersonData();
+
+    console.log("Start logic check sex");
+    console.log(sex);
+
+    console.log(this.calcData);
 
     personModel.sex=sex;
     personModel.weight=weight;
@@ -28,15 +34,18 @@ export class CalculatorLogicService {
     personModel.age=age;
     personModel.fat=fat;
     personModel.activityLevel=activityLevel;
-    console.log("average example ");
-    console.log(
 
-      this.avgArr([2, 3, 4, 5])
-
-    );
+    console.log("Personal Model");
+    console.log(personModel.sex)
 
     let cache = this.parsePersonModelToShow(personModel);
-    this.saveData(personModel,cache);
+    this.createToSaveData(personModel,cache);
+
+    // this.dataService.postAPIData(this.calcData).subscribe((response)=>{
+    //   console.log('response from post data is ', response);
+    // },(error)=>{
+    //   console.log('error during post is ', error)
+    // })
 
     return cache;
 
@@ -69,18 +78,6 @@ export class CalculatorLogicService {
   calcMcCardle(personModel){
 
     return (21.6*((personModel.weight-(personModel.fat/100)*personModel.weight))+370);
-
-  }
-
-  loseWeight(caloriesPerDay){
-
-    return (caloriesPerDay*0.9);
-
-  }
-
-  getWeight(caloriesPerDay){
-
-    return (caloriesPerDay*1.1);
 
   }
 
@@ -156,18 +153,48 @@ export class CalculatorLogicService {
 
   }
 
-  saveData(personModel,cache){
-    let bmi = this.calcBmi(personModel.weight,personModel.height);
 
-    console.log("BMI");
-    console.log(bmi);
-    this.calcData.push({
+
+  saveData(temp){
+
+    this.dataService.insertAPIData(temp).subscribe((response)=>{
+      console.log('response from post data is ', response);
+    },(error)=>{
+      console.log('error during post is ', error)
+    })
+
+  }
+
+  createToSaveData(personModel,cache){
+
+    let bmi = this.calcBmi(personModel.weight,personModel.height);
+    console.log("Druing creating:"+personModel.sex);
+    let temp={
       person:personModel,
       bmi:bmi,
       bmr:cache[0].bmrKcal
-      })
+      }
 
-      console.log(this.calcData[0].person.age)
+    this.calcData.push(temp)
+
+    this.saveData(temp);
+
+  }
+
+
+  getDataFromServer(){
+    this.dataService.getAPIData().subscribe((response)=>{
+      console.log(this.calcData);
+      console.log(response.length);
+        for(let i =0;i<response.length; i++){
+          this.calcData.push(response[i]);
+        }
+        console.log(this.calcData);
+    },(error)=>{
+      console.log('error during post is ', error)
+    })
+
+    console.log(this.calcData);
   }
 
    getData(){
@@ -187,10 +214,6 @@ export class CalculatorLogicService {
 
     bigData.forEach(element => {
 
-      console.log("foreach element");
-      console.log(element.person);
-      console.log(element.person.age);
-
       avgAge.push(element.person.age);
       avgHeight.push(element.person.height);
       avgWeight.push(element.person.weight);
@@ -198,8 +221,7 @@ export class CalculatorLogicService {
       avgBmr.push(element.bmr);
 
     });
-    console.log(avgHeight);
-    console.log(this.avgArr(avgHeight));
+
 
     return {
       age:this.avgArr(avgAge),
