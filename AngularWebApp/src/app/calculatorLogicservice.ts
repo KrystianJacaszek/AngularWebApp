@@ -13,6 +13,8 @@ import { TemplateParseResult } from '@angular/compiler';
 
 export class CalculatorLogicService {
 
+  check : boolean =true;
+
   calcData =[];
 
   avarageData;
@@ -166,15 +168,18 @@ export class CalculatorLogicService {
 
 
   getDataFromServer(){
-    this.dataService.getAPIData().subscribe((response)=>{
+    if(this.check){
+      this.dataService.getAPIData().subscribe((response)=>{
 
-        for(let i =0; i <10; i++){
-          this.calcData.push(response[i]);
-        }
-        console.log(this.calcData);
-        },(error)=>{
-          console.log('error during post is ', error)
-        })
+          for(let i =0; i <10; i++){
+            this.calcData.push(response[i]);
+          }
+          console.log(this.calcData);
+          },(error)=>{
+            console.log('error during post is ', error)
+          })
+          this.check=false;
+      }
   }
 
    getData(){
