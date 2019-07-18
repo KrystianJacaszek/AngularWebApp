@@ -9,15 +9,12 @@ app.get('/', (req, res) => {
 app.get('/getData', (req, res) => {
    
 	let jsonData = require('./data.json');
-
-	console.log(jsonData);
-	
-	res.jsonData
+	res.json(jsonData);
 })
 
 app.post('/postData', bodyParser.json(), (req, res) => {
 
-   // res.json(req.body)
+ 
 	const fs = require('fs');
 	let data = JSON.stringify(req.body, null, 2);
 	fs.writeFile('data.json', data, (err) => {
@@ -31,7 +28,7 @@ app.post('/postData', bodyParser.json(), (req, res) => {
 
  app.post('/insertData', bodyParser.json(), (req, res) => {
 
-   // res.json(req.body)
+  
 	const fs = require('fs');
 	
 	let jsonData = require('./data.json');
@@ -47,4 +44,4 @@ app.post('/postData', bodyParser.json(), (req, res) => {
 })
 
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(3000, () => console.log('App listening on port 3000!'))

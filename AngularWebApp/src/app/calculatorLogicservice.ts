@@ -19,33 +19,19 @@ export class CalculatorLogicService {
 
   constructor(private dataService: DataManagmentService) { }
 
-   startLogic(sex, weight, height, age, fat, activityLevel){
+   startLogic(gender, weight, height, age, fat, activityLevel){
 
     let personModel = new PersonData();
 
-    console.log("Start logic check sex");
-    console.log(sex);
-
-    console.log(this.calcData);
-
-    personModel.sex=sex;
+    personModel.gender=gender;
     personModel.weight=weight;
     personModel.height=height;
     personModel.age=age;
     personModel.fat=fat;
     personModel.activityLevel=activityLevel;
 
-    console.log("Personal Model");
-    console.log(personModel.sex)
-
     let cache = this.parsePersonModelToShow(personModel);
     this.createToSaveData(personModel,cache);
-
-    // this.dataService.postAPIData(this.calcData).subscribe((response)=>{
-    //   console.log('response from post data is ', response);
-    // },(error)=>{
-    //   console.log('error during post is ', error)
-    // })
 
     return cache;
 
@@ -59,7 +45,7 @@ export class CalculatorLogicService {
 
   calcHarrisBenedict(personModel){
 
-    if(personModel.sex="male")
+    if(personModel.gender="male")
       return (66.5+(13.75*personModel.weight)+(5.003*personModel.height)-(6.775*personModel.age))
     else
       return (655.1+(9.563*personModel.weight)+(1.85-personModel.height)-(4.676*personModel.age))
@@ -68,7 +54,7 @@ export class CalculatorLogicService {
 
   calcMiffin(personModel){
 
-    if(personModel.sex="male")
+    if(personModel.gender="male")
       return ((10*personModel.weight)+(6.25*personModel.height)-(5*personModel.age)+5)
     else
       return ((10*personModel.weight)+(6.25*personModel.height)-(5*personModel.age)-161)
@@ -114,9 +100,7 @@ export class CalculatorLogicService {
 
 
     }
-    console.log(showArray[0].caloriesArray.calorieKcal.carbohydrates);
-    console.log(showArray[0].caloriesArray.calorieGrams.fats);
-    console.log(showArray[0].suggestKcal);
+
     return showArray;
 
   }
@@ -168,7 +152,6 @@ export class CalculatorLogicService {
   createToSaveData(personModel,cache){
 
     let bmi = this.calcBmi(personModel.weight,personModel.height);
-    console.log("Druing creating:"+personModel.sex);
     let temp={
       person:personModel,
       bmi:bmi,
@@ -184,17 +167,14 @@ export class CalculatorLogicService {
 
   getDataFromServer(){
     this.dataService.getAPIData().subscribe((response)=>{
-      console.log(this.calcData);
-      console.log(response.length);
-        for(let i =0;i<response.length; i++){
+
+        for(let i =0; i <10; i++){
           this.calcData.push(response[i]);
         }
         console.log(this.calcData);
-    },(error)=>{
-      console.log('error during post is ', error)
-    })
-
-    console.log(this.calcData);
+        },(error)=>{
+          console.log('error during post is ', error)
+        })
   }
 
    getData(){
