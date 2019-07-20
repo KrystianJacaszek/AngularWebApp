@@ -41,31 +41,31 @@ export class CalculatorLogicService {
 
   calcBmi(weight, height){
 
-    return (weight/(height*height)*10000);
+    return this.roundNumber((weight/(height*height)*10000),2);
 
   }
 
   calcHarrisBenedict(personModel){
 
     if(personModel.gender="male")
-      return (66.5+(13.75*personModel.weight)+(5.003*personModel.height)-(6.775*personModel.age))
+      return this.roundNumber((66.5+(13.75*personModel.weight)+(5.003*personModel.height)-(6.775*personModel.age)),2)
     else
-      return (655.1+(9.563*personModel.weight)+(1.85-personModel.height)-(4.676*personModel.age))
+      return this.roundNumber((655.1+(9.563*personModel.weight)+(1.85-personModel.height)-(4.676*personModel.age)),2)
 
   }
 
   calcMiffin(personModel){
 
     if(personModel.gender="male")
-      return ((10*personModel.weight)+(6.25*personModel.height)-(5*personModel.age)+5)
+      return this.roundNumber(((10*personModel.weight)+(6.25*personModel.height)-(5*personModel.age)+5),2)
     else
-      return ((10*personModel.weight)+(6.25*personModel.height)-(5*personModel.age)-161)
+      return this.roundNumber(((10*personModel.weight)+(6.25*personModel.height)-(5*personModel.age)-161),2)
 
   }
 
   calcMcCardle(personModel){
 
-    return (21.6*((personModel.weight-(personModel.fat/100)*personModel.weight))+370);
+    return this.roundNumber((21.6*((personModel.weight-(personModel.fat/100)*personModel.weight))+370),2)
 
   }
 
@@ -112,7 +112,7 @@ export class CalculatorLogicService {
     if(activityLevel== 0 || activityLevel == null)
       return neededCalories;
     else
-      return neededCalories*activityLevel;
+      return this.roundNumber(neededCalories*activityLevel,2)
 
   }
 
@@ -121,16 +121,16 @@ export class CalculatorLogicService {
     let entryKcal = new CaloriesModel();
 
     entryKcal.calories=neededCalories;
-    entryKcal.carbohydrates=(neededCalories*0.55);
-    entryKcal.proteins=(neededCalories*0.15);
-    entryKcal.fats=(neededCalories*0.30)
+    entryKcal.carbohydrates=this.roundNumber((neededCalories*0.55),2)
+    entryKcal.proteins=this.roundNumber((neededCalories*0.15),2)
+    entryKcal.fats=this.roundNumber((neededCalories*0.30),2)
 
     let entryGrams = new CaloriesModel();
 
-    entryGrams.calories=entryKcal.calories;
-    entryGrams.carbohydrates=entryKcal.carbohydrates/4;
-    entryGrams.proteins=entryKcal.proteins/4;
-    entryGrams.fats=entryKcal.fats/9;
+    entryGrams.calories=this.roundNumber(entryKcal.calories,2)
+    entryGrams.carbohydrates=this.roundNumber((entryKcal.carbohydrates/4),2)
+    entryGrams.proteins=this.roundNumber((entryKcal.proteins/4),2)
+    entryGrams.fats=this.roundNumber((entryKcal.fats/9),2)
 
     return {calorieKcal:entryKcal,
               calorieGrams:entryGrams};
