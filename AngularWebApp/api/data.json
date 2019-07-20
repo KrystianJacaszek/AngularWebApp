@@ -118,5 +118,77 @@
     },
     "bmi": 26.533758829646096,
     "bmr": 1763.676
+  },
+  {
+    "person": {
+      "gender": "male",
+      "weight": 74,
+      "height": 167,
+      "age": 23,
+      "fat": 8,
+      "activityLevel": 1
+    },
+    "bmi": 26.53,
+    "bmr": 1763.676
+  },
+  {
+    "person": {
+      "gender": "male",
+      "weight": 74,
+      "height": 167,
+      "age": 23,
+      "fat": 8,
+      "activityLevel": 1
+    },
+    "bmi": 26.53,
+    "bmr": 1763.68
+  },
+  {
+    "person": {
+      "gender": "male",
+      "weight": 74,
+      "height": 167,
+      "age": 23,
+      "fat": 8,
+      "activityLevel": 1
+    },
+    "bmi": 26.53,
+    "bmr": 1763.68
+  },
+  {
+    "person": {
+      "gender": "male",
+      "weight": 74,
+      "height": 167,
+      "age": 45,
+      "fat": 8,
+      "activityLevel": 1
+    },
+    "bmi": 26.53,
+    "bmr": 1614.63
+  },
+  {
+    "person": {
+      "gender": "male",
+      "weight": 74,
+      "height": 167,
+      "age": 23,
+      "fat": 8,
+      "activityLevel": 1.8
+    },
+    "bmi": 26.53,
+    "bmr": 1763.68
+  },
+  {
+    "person": {
+      "gender": "male",
+      "weight": 99,
+      "height": 190,
+      "age": 28,
+      "fat": 9,
+      "activityLevel": 1.6
+    },
+    "bmi": 27.42,
+    "bmr": 2188.62
   }
 ]
